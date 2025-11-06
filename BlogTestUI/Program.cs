@@ -32,9 +32,9 @@ namespace BlogTestUI
             
             AddPost(db);
 
-            ShowPostDetails(db);
-
             ListPosts(db);
+
+            ShowPostDetails(db);
 
             Console.WriteLine("Press Enter to exit...");
             Console.ReadLine();
@@ -133,7 +133,7 @@ namespace BlogTestUI
 
             Console.WriteLine(post.Body);
 
-            Console.WriteLine(post.DateCreated.ToString("MM dd yyyy"));
+            Console.WriteLine(post.DateCreated.ToString("MMM d yyyy"));
         }
     }
 }

@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SamsonBlogDB", "SamsonBlogD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogTestUI", "BlogTestUI\BlogTestUI.csproj", "{A01A8899-F839-4E49-8163-9BDADC4F862F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogAPI", "BlogAPI\BlogAPI.csproj", "{13C78573-098B-4B26-AA30-3F1AE9EAD0D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{A01A8899-F839-4E49-8163-9BDADC4F862F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A01A8899-F839-4E49-8163-9BDADC4F862F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A01A8899-F839-4E49-8163-9BDADC4F862F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13C78573-098B-4B26-AA30-3F1AE9EAD0D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C78573-098B-4B26-AA30-3F1AE9EAD0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C78573-098B-4B26-AA30-3F1AE9EAD0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C78573-098B-4B26-AA30-3F1AE9EAD0D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
