@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { TokenStorageService } from '../../services/token-storage.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,8 +14,10 @@ import { HttpClient } from '@angular/common/http';
 export class LoginPageComponent implements OnInit {
   form: any = {
     username: null,
-    password: null
+    password: null,
   }
+
+  hide = true;
 
   constructor(
     private authService: AuthService,

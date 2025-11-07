@@ -1,0 +1,62 @@
+@use '@angular/material' as mat;
+
+$primary: mat.define-palette(mat.$indigo-palette, 600);
+$accent:  mat.define-palette(mat.$pink-palette, A200);
+$warn:    mat.define-palette(mat.$red-palette);
+
+$light: mat.define-light-theme((
+  color: (primary: $primary, accent: $accent, warn: $warn),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+$dark: mat.define-dark-theme((
+  color: (primary: $primary, accent: $accent, warn: $warn),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+@include mat.all-component-themes($light);
+
+.dark-theme {
+  @include mat.all-component-colors($dark);
+  background: #121212;
+  color: #e6e6e6;
+}
+
+html, body { height: 100%; }
+
+body { 
+  margin: 0; 
+  font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif; 
+}
+
+.container { 
+  max-width: 1100px; 
+  margin: 1rem auto; 
+  padding: 0 16px; 
+}
+
+.grid { 
+  display: grid; 
+  grid-template-columns: 
+  repeat(auto-fill, minmax(280px,1fr)); 
+  gap: 16px; 
+}
+
+.page-top { 
+  padding-top: 16px; 
+}  
+
+.page-right { 
+  display: flex; 
+  justify-content: 
+  flex-end; 
+}
+
+.form-page {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 24px;
+}

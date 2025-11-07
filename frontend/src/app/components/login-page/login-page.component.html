@@ -1,26 +1,29 @@
-<div>
-    <h1>Welcome Back</h1>
-    <h3>Login Here</h3>
-    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
-        <div>
-            <label for="username">Email</label>
-            <input
-                type="text"
-                name="username"
-                [(ngModel)]="form.username"
-                required
-                #username="ngModel"/>
-        </div>
-        
-        <div>
+<div class="form-page">
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title>Welcome Back</mat-card-title>
+    <mat-card-subtitle>Login to continue</mat-card-subtitle>
+  </mat-card-header>
 
-            <label for="password">Password</label>
-            <input type="password"
-                name="password"
-                [(ngModel)]="form.password"
-                required
-                #password="ngModel"/>
-        </div>
-        <button type="submit">Submit</button>
+  <mat-card-content>
+    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" name="username" [(ngModel)]="form.username" required #username="ngModel" />
+        <mat-error *ngIf="username.invalid && username.touched">Email is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="form.password" required #password="ngModel"/>
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide" aria-label="toggle password">
+          <mat-icon>{{ hide ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.invalid && password.touched">Password is required</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="full">Submit</button>
     </form>
+  </mat-card-content>
+</mat-card>
 </div>

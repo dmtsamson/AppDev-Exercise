@@ -1,41 +1,37 @@
-<form 
-    name="form"
-    (ngSubmit)="onSubmit()"
-    #f="ngForm">
+<div class="form-page">
+  <mat-card class="card" style="width:420px; max-width:92vw;">
+    <mat-card-header>
+      <mat-card-title>Create Account</mat-card-title>
+    </mat-card-header>
 
-    <label for="username">Username</label>
-    <input
-        type="text"
-        name="username"
-        [(ngModel)]="form.username"
-        required
-        #username="ngModel" />
-    
-    <label for="password">Password</label>
-    <input
-        type="password"
-        name="password"
-        [(ngModel)]="form.password"
-        required
-        #password="ngModel" />
+    <mat-card-content>
+      <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+        <mat-form-field appearance="fill" class="full">
+          <mat-label>Username</mat-label>
+          <input matInput name="username" [(ngModel)]="form.username" required #username="ngModel">
+          <mat-error *ngIf="username.invalid && username.touched">Username is required</mat-error>
+        </mat-form-field>
 
-    <label for="firstName">First Name</label>
-    <input
-        type="text"
-        name="firstName"
-        [(ngModel)]="form.firstName"
-        required
-        #password="ngModel" />
+        <mat-form-field appearance="fill" class="full">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" name="password" [(ngModel)]="form.password" required #password="ngModel">
+          <mat-error *ngIf="password.invalid && password.touched">Password is required</mat-error>
+        </mat-form-field>
 
-    <label for="lastName">Last Name</label>
-    <input
-        type="lastName"
-        name="lastName"
-        [(ngModel)]="form.lastName"
-        required
-        #password="ngModel" />
+        <mat-form-field appearance="fill" class="full">
+          <mat-label>First Name</mat-label>
+          <input matInput name="firstName" [(ngModel)]="form.firstName" required #firstName="ngModel">
+          <mat-error *ngIf="firstName.invalid && firstName.touched">First name is required</mat-error>
+        </mat-form-field>
 
-        <button>Submit</button>
+        <mat-form-field appearance="fill" class="full">
+          <mat-label>Last Name</mat-label>
+          <input matInput name="lastName" [(ngModel)]="form.lastName" required #lastName="ngModel">
+          <mat-error *ngIf="lastName.invalid && lastName.touched">Last name is required</mat-error>
+        </mat-form-field>
 
-    </form>
-    
+        <button mat-raised-button color="primary" class="full">Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
